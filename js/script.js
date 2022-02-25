@@ -5,12 +5,9 @@
 5) se non è presente ne stampo un altro.*/
 
 //! Ho creato una variabile con all'interno una lista indicizzata di elementi 
-const mailList = ["giovanni@gmail.com", "luca@libero.it", "alberto@gmail.com", "valentina@outlook.com", "francesca@libero.it"];
+const mailList = ["giovanni@gmail.com", "luca@libero.it", "alberto@gmail.com", "valentina@outlook.com", "francesca@libero.it", "giuliocoppola@gmail.com"];
 console.log(mailList);
 
-//! variabile che prende il valore del input con id = user-mail
-let userMail = document.getElementById("user-mail").value;
-console.log(userMail);
 
 //TODO creato un bottone tramite javascript
 let newButton = document.createElement("button");
@@ -23,16 +20,28 @@ document.querySelector("#command").append(newButton);
 //TODO aggiunta la classe text-center al parent del bottone
 newButton.parentElement.classList.add("text-center");
 
+let newMessage = document.querySelector("p");
+newMessage.classList.add("fs-3", "fw-bold");
 
+//! aggiungo un eventlistner al button per far si che dopo che l'utente inserisce la sua e-mail nell'input,
+//! e clicca il bottone accedi il ciclo FOR scorra la lista
 newButton.addEventListener("click", function() {
+    //! variabile che prende il valore del input con id = user-mail
+    let userMail = document.getElementById("user-mail").value;
+    // console.log(userMail);
     //! inizializzo un ciclo for che farà scorrere la lista di e-mail dall'inizio alla fine
     for (let i = 0; i < mailList.length; i = i + 1) {
     console.log(mailList[i]);
 
-    if (userMail == i) {
-        console.log("Welcome");
-    } else if (userMail != i) {
-        console.log("Your credentials are invalid");
+    //! tramite questa condizione verifico che la mail dell'utente sia presente o no nella lista
+    if (userMail == mailList[i]) {
+        newMessage.innerHTML = "Welcome Back!"
+        //! se la e-mail è presente all'interno della lista allora "break" interrompe il ciclo e viene stampato 
+        //! il messaggio sulla pagina 
+        break
+        //! se l'e-mail non è presente nella lista viene stampato il secondo messaggio
+    } else {
+        newMessage.innerHTML = "Your credentials are invalid!"
     }
 }
 
