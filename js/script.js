@@ -29,6 +29,8 @@ newButton.addEventListener("click", function() {
     //! variabile che prende il valore del input con id = user-mail
     let userMail = document.getElementById("user-mail").value;
     // console.log(userMail);
+
+    
     //! inizializzo un ciclo for che farà scorrere la lista di e-mail dall'inizio alla fine
     for (let i = 0; i < mailList.length; i = i + 1) {
     console.log(mailList[i]);
