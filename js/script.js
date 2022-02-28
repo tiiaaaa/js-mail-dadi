@@ -26,9 +26,11 @@ inputLabel.classList.add("mb-3", "fst-italic");
 let newMessage = document.querySelector("p");
 newMessage.classList.add("fs-3", "fw-bold", "text-white");
 
+
 //! aggiungo un eventlistner al button per far si che dopo che l'utente inserisce la sua e-mail nell'input,
 //! e clicca il bottone accedi il ciclo FOR scorra la lista
 newButton.addEventListener("click", function() {
+
     //! variabile che prende il valore del input con id = user-mail
     let userMail = document.getElementById("user-mail").value;
     // console.log(userMail);
@@ -51,6 +53,9 @@ newButton.addEventListener("click", function() {
 }
 
 })
+
+
+
 
 
 
